@@ -1,4 +1,8 @@
 {
-    "deaths": 20,
-    "kills": 9
+    "deaths": 10,
+    "level_data": {
+        "tutorial": {
+            "deaths": 4
+        }
+    }
 }

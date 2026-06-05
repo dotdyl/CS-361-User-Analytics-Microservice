@@ -3,17 +3,29 @@ import requests, json
 url = "http://127.0.0.1:6001/user_analytics"
 
 data = {
-    "add" : {"deaths" : 1}
+    "deaths" : 1,
+    "level_data" : {
+        "tutorial" : {
+            "deaths" : 1
+        }
+    }
 }
 
-response1 = requests.post(url, json=data)
+# This request adds the respective value to each dictionary attribute
+response1 = requests.post(url + "/add", json=data)
 print(json.dumps(response1.json(), indent = 4))
 
 data = {
-    "add" : {"kills" : 3}
+    "deaths" : 1,
+    "level_data" : {
+        "tutorial" : {
+            "deaths" : 1
+        }
+    }
 }
 
-response2 = requests.post(url, json=data)
+# This request sets the respective value to each dictionary attribute
+response2 = requests.post(url + "/set", json=data)
 print(json.dumps(response2.json(), indent = 4))
 
 response3 = requests.get(url)
