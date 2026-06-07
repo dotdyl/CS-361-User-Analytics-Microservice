@@ -17,7 +17,10 @@ def recursive_add(d, u):
         if isinstance(v, collections.abc.Mapping):
             d[k] = recursive_add(d.get(k, {}), v)
         else:
-            d[k] += v
+            if k in d:
+                d[k] += v
+            else:
+                d[k] = v
     return d
 
 def load_data() -> dict:
